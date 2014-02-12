@@ -43,7 +43,7 @@ class COrphelia implements ISingleton {
       $controller = $this->request->controller;
       $method     = $this->request->method;
       $arguments  = $this->request->arguments;
-      var_dump($controller);
+
     // Step 2
     // Check if there is a callable method in the controller class, if then call it
           // Is the controller enabled in config.php?
@@ -57,9 +57,6 @@ class COrphelia implements ISingleton {
       $className               = $this->config['controllers'][$controller]['class'];
       $classExists           = class_exists($className);
     }
-    var_dump($controllerExists);
-    var_dump($controllerEnabled);
-    var_dump($classExists);
 
     // Check if controller has a callable method in the controller class, if then call it
     if($controllerExists && $controllerEnabled && $classExists) {
